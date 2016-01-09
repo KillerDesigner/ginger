@@ -19,7 +19,9 @@
     </section>
 
     <section class="main-content">
-      <h1>
+      <p><img src="http://buschschwick.github.io/ginger/images/GingerLogo.png" alt="Ginger Logo"></p>
+
+<h1>
 <a id="ginger" class="anchor" href="#ginger" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ginger</h1>
 
 <p>Ginger is a minimal flexbox 12 column grid system named after a cute dog. It doesn't give
@@ -40,11 +42,15 @@ easy and quick.</p>
 </li>
 </ol>
 
+<p>A fourth option is downloading the latest version of Ginger and including <code>ginger.min.css</code>
+found in the <code>/dist/</code> folder into the <code>&lt;head&gt;</code> of your document. Only use this method if you don't want to customize
+any settings and/or need a pure CSS build.</p>
+
 <h2>
 <a id="using-ginger" class="anchor" href="#using-ginger" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Ginger</h2>
 
-<p>Ginger is rather easy to use. A basic structure of one column spans 12 columns
-would look similar to this:</p>
+<p>Ginger is rather easy to use. A basic structure that consists of an element that
+spans 12 columns would look similar to this:</p>
 
 <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
   &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>row<span class="pl-pds">"</span></span>&gt;
@@ -71,9 +77,28 @@ would look similar to this:</p>
 columns and you must have a <code>row</code> element that holds your columns.</p>
 
 <h2>
+<a id="individual-flex-basis-values" class="anchor" href="#individual-flex-basis-values" aria-hidden="true"><span class="octicon octicon-link"></span></a>Individual Flex-Basis Values</h2>
+
+<p>If you'd like to have columns with custom <code>flex-basis</code> values, you totally can.
+This requires that you include <code>js/ginger.js</code> or <code>dist/ginger.min.js</code> in your project. A
+custom <code>flex-basis</code> setup would look something like this:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>container<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>row<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>flex-basis-450<span class="pl-pds">"</span></span>&gt;
+      ...
+    &lt;/<span class="pl-ent">div</span>&gt;
+  &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<p>Whatever value you give your <code>flex-basis-</code> class will be passed to the element's
+<code>flex-basis</code> property and is converted to pixels. Ginger does not require to include <code>ginger.js</code> so if changing
+<code>flex-basis</code> values with classes isn't for you, then move on!</p>
+
+<h2>
 <a id="class-names" class="anchor" href="#class-names" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class Names</h2>
 
-<p>I kept Ginger very simple. Adding <code>col-*</code> will give you an element spanning
+<p>The goal for Ginger is to be very simple. Class names are simple too. Adding <code>col-*</code> will give you an element spanning
 however many columns indicated. So to add an element spanning 6 columns I would
 use:</p>
 
@@ -116,9 +141,10 @@ to the height of its siblings.</p>
 <a id="adjusting-default-settings" class="anchor" href="#adjusting-default-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adjusting Default Settings</h2>
 
 <p>Adjusting the settings for Ginger allows you to customize the max-width of rows,
-column padding, or mobile breakpoint. If you are going to adjust the settings it
-is best to make a copy of the file and include it in your project compilation
-process to avoid any settings being overwritten in the event of a Ginger update.</p>
+column padding, global flex-basis value, or mobile breakpoint. If you are going to adjust
+the settings it is best to make a copy of the file and include it in your project
+compilation process to avoid any settings being overwritten in the event of a
+Ginger update.</p>
 
 <p>For instance, if I had a stylesheet called <code>theme.scss</code> using Ginger with custom
 settings it would look something like this:</p>
@@ -138,6 +164,9 @@ settings it would look something like this:</p>
 
 <p>If you have feedback, find a bug, or want to make contributions, please don't
 hesitate to open an issue or make a pull request.</p>
+
+<p>Special thanks to <a href="http://allisonperlis.com/">Allison Perlis</a> for the rad Ginger
+logo!</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/buschschwick/ginger">Ginger</a> is maintained by <a href="https://github.com/buschschwick">buschschwick</a>.</span>
